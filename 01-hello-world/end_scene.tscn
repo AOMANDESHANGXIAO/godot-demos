@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dlg37podks3by"]
+
+[ext_resource type="Script" uid="uid://dfjmbjn41snsm" path="res://end_scene.gd" id="1_3wcc1"]
+
+[node name="EndScene" type="Node2D" unique_id=899007097]
+script = ExtResource("1_3wcc1")
+
+[node name="EndButton" type="Button" parent="." unique_id=682206217]
+offset_left = 439.0
+offset_top = 404.0
+offset_right = 657.0
+offset_bottom = 523.0
+text = "结束游戏"
+
+[connection signal="pressed" from="EndButton" to="." method="_on_end_button_pressed"]

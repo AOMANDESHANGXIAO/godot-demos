@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://baljkh8k431n1"]
+
+[ext_resource type="Script" uid="uid://68ybejuvvb51" path="res://gaming_scene.gd" id="1_dswio"]
+
+[node name="GamingScene" type="Node2D" unique_id=706338192]
+script = ExtResource("1_dswio")
+
+[node name="GoEndButton" type="Button" parent="." unique_id=972564396]
+offset_left = 425.0
+offset_top = 417.0
+offset_right = 650.0
+offset_bottom = 541.0
+text = "不玩了"
+
+[node name="Label" type="Label" parent="." unique_id=1363261919]
+offset_left = 444.0
+offset_top = 260.0
+offset_right = 688.0
+offset_bottom = 342.0
+text = "你正在游戏中...."
+
+[connection signal="pressed" from="GoEndButton" to="." method="_on_go_end_button_pressed"]

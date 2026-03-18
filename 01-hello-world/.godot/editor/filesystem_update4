@@ -1,0 +1,7 @@
+res://main.tscn
+res://main.gd
+res://gaming_scene.gd
+res://gaming_scene.tscn
+res://scene_manager.gd
+res://end_scene.tscn
+res://end_scene.gd

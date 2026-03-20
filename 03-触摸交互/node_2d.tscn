@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bvx506jhbuk6o"]
+
+[ext_resource type="Script" uid="uid://bf8k7fwi7jk2i" path="res://node_2d.gd" id="1_wtcfe"]
+[ext_resource type="PackedScene" uid="uid://ckwuuiix1xxkn" path="res://color_rect.tscn" id="2_0e48y"]
+
+[node name="Node2D" type="Node2D" unique_id=1606638947]
+script = ExtResource("1_wtcfe")
+random_scene = ExtResource("2_0e48y")
+
+[node name="Label" type="Label" parent="." unique_id=1163418587]
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 91.0
+offset_bottom = 25.0
+text = "点击次数：0"
+
+[node name="Timer" type="Timer" parent="." unique_id=234987987]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

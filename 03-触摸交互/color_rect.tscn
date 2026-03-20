@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://ckwuuiix1xxkn"]
+
+[ext_resource type="Script" uid="uid://dw1nt1ksx81km" path="res://color_rect.gd" id="1_h40d6"]
+
+[node name="ColorRect" type="ColorRect" unique_id=1547112884]
+offset_left = 263.0
+offset_top = 87.0
+offset_right = 360.0
+offset_bottom = 184.0
+pivot_offset = Vector2(47, 48)
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+script = ExtResource("1_h40d6")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

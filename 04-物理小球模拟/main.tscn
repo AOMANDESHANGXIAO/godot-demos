@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://binl2ly5m7ehp"]
+
+[ext_resource type="PackedScene" uid="uid://c3kjy8pojkbce" path="res://wall.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://dxa6fg82rvxye" path="res://ball.tscn" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://bfg3nwkfommt3" path="res://target_line.gd" id="2_h2yge"]
+
+[node name="Main" type="Node2D" unique_id=644301299]
+position = Vector2(-10, -21)
+
+[node name="Wall" parent="." unique_id=812643167 instance=ExtResource("1_ig7tw")]
+position = Vector2(0, -616)
+
+[node name="TargetLine" type="Line2D" parent="." unique_id=1787533765]
+script = ExtResource("2_h2yge")
+line_width = 1.0
+line_color = Color(0.52577305, 0.52174395, 0.6356703, 1)
+ball_scene = ExtResource("2_0xm2m")
+
+[node name="Wall2" parent="." unique_id=1049669602 instance=ExtResource("1_ig7tw")]
+position = Vector2(680, -492)
+rotation = 1.5707964
+
+[node name="Wall3" parent="." unique_id=1076212727 instance=ExtResource("1_ig7tw")]
+position = Vector2(1802, -492)
+rotation = 1.5707964

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c3kjy8pojkbce"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ig7tw"]
+bounce = 0.7
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7dm0k"]
+size = Vector2(1159, 40)
+
+[node name="Wall" type="StaticBody2D" unique_id=812643167]
+physics_material_override = SubResource("PhysicsMaterial_ig7tw")
+constant_linear_velocity = Vector2(300, 0)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2012643608]
+offset_left = 7.0
+offset_top = 634.0
+offset_right = 1166.0
+offset_bottom = 674.0
+color = Color(0.64317095, 0.98851687, 0.65678924, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1451894028]
+position = Vector2(586.5, 654)
+shape = SubResource("RectangleShape2D_7dm0k")

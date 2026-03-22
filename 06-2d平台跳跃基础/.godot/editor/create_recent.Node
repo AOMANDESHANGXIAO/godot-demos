@@ -1,0 +1,15 @@
+HBoxContainer
+Sprite2D
+Label
+CanvasLayer
+AudioStreamPlayer2D
+AnimationPlayer
+AudioListener2D
+Control
+Node
+Camera2D
+RayCast2D
+CollisionShape2D
+AnimatedSprite2D
+TileMapLayer
+Timer

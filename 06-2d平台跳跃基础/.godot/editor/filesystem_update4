@@ -1,0 +1,8 @@
+res://scenes/player.tscn
+res://scripts/player.gd
+res://main.tscn
+res://scripts/coin_label.gd
+res://heart.tscn
+res://game_manager.gd
+res://scripts/h_box_container.gd
+res://scenes/heart.tscn

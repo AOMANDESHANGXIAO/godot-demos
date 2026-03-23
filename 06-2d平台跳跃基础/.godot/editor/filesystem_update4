@@ -1,7 +1,5 @@
-res://scenes/damage_area.tscn
-res://art/sprites/damage_area.gd
-res://scenes/slime.tscn
 res://main.tscn
 res://game_manager.gd
-res://scripts/invincibility_timer.gd
+res://scripts/player.gd
 res://scenes/player.tscn
+res://scripts/h_box_container.gd

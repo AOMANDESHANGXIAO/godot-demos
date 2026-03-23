@@ -1,13 +1,18 @@
 extends Node
-
+# 1. 补充最大血量常量（信号需要传递max_health）
+const MAX_HEALTH: int = 3  # 最大血量，和初始health保持一致
 var coin = 0
-var health = 3
+var health = MAX_HEALTH
 var is_invince = false # 是否无敌
 
 @onready var invincibility_timer: Timer = $InvincibilityTimer
 
 signal coin_change
-signal health_change
+signal health_changed(
+	new_health: int,
+	change_amount: int,
+	max_health: int,
+)
 
 func collect_coin():
 	coin += 1
@@ -19,9 +24,19 @@ func take_damage(val: int):
 		# 无敌，不会受到伤害
 		print("无敌！")
 		return
-	health = max(health-val,0)
-	print("受到伤害")
-	is_invince = true
-	invincibility_timer.start()
+
+	# 计算血量变化值（负数=掉血）
+	var change_amount: int = -val  # 伤害值是扣除的血量，所以变化量为负
+	# 更新血量（限制在0~MAX_HEALTH之间）
+	var old_health: int = health
+	health = max(health - val, 0)
 	
+	# 只有血量真的变化时才发射信号（避免重复触发）
+	if health != old_health:
+		print("受到伤害，当前血量: ", health)
+		# 关键修复：发射信号时传递所有声明的参数
+		emit_signal("health_changed", health, change_amount, MAX_HEALTH)
+		# 开启无敌状态
+		is_invince = true
+		invincibility_timer.start()
 	

@@ -4,16 +4,23 @@ extends CharacterBody2D
 const SPEED = 150.0
 const JUMP_VELOCITY = -300.0
 var is_jumping = false
+var is_hurting = false
 
 # 替换原有play_animation函数
 @onready var animated_sprite = $AnimatedSprite2D  # 获取AnimatedSprite2D节点
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var hit_audio_player: AudioStreamPlayer2D = $HitAudioPlayer
 
 func _physics_process(delta: float) -> void:
+	
+
 	# 1. 重力逻辑（原有）
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
+	
+	if is_hurting:
+		play_animation("hit")
+		return
 	# 2. 跳跃逻辑（原有）
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -31,6 +38,8 @@ func _physics_process(delta: float) -> void:
 
 	# ---------------------- 新增：动画切换核心逻辑 ----------------------
 	update_animation(direction)
+		# 如果正在受伤，播放受伤动画
+
 
 func play_animation(anim_name: String) -> void:
 	if animated_sprite.animation != anim_name:
@@ -50,3 +59,15 @@ func update_animation(direction: float) -> void:
 			play_animation("run")
 		else:  # 无水平输入（闲置）
 			play_animation("idle")
+
+
+func _on_game_manager_health_changed(_new_health: int, change_amount: int, _max_health: int) -> void:
+	if change_amount < 0:
+		is_hurting = true
+		hit_audio_player.play()
+		print("hit!")
+	 # Replace with function body.
+
+
+func _on_invincibility_timer_timeout() -> void:
+	is_hurting = false

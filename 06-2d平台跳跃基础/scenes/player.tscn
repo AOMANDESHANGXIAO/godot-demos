@@ -3,6 +3,11 @@
 [ext_resource type="Script" uid="uid://8wgrto56hd7b" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://b8cmjj8vq3r8d" path="res://art/sprites/knight.png" id="2_qhqgy"]
 [ext_resource type="AudioStream" uid="uid://b55xtmvwkoslc" path="res://art/sounds/jump.wav" id="3_qhqgy"]
+[ext_resource type="AudioStream" uid="uid://d3ga5iqgco704" path="res://art/sounds/hurt.wav" id="4_dqkch"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4r1p"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(64, 192, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_onrkg"]
 atlas = ExtResource("2_qhqgy")
@@ -56,12 +61,31 @@ region = Rect2(192, 64, 32, 32)
 atlas = ExtResource("2_qhqgy")
 region = Rect2(224, 64, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_y4r1p"]
-atlas = ExtResource("2_qhqgy")
-region = Rect2(64, 192, 32, 32)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_2hs0m"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4r1p")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4r1p")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4r1p")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 6.0
+}, {
 "frames": [{
 "duration": 0.7,
 "texture": SubResource("AtlasTexture_onrkg")
@@ -115,29 +139,6 @@ animations = [{
 "loop": true,
 "name": &"run",
 "speed": 8.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y4r1p")
-}, {
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y4r1p")
-}, {
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y4r1p")
-}],
-"loop": true,
-"name": &"take_damage",
-"speed": 6.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4flbx"]
@@ -149,9 +150,8 @@ script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1643688976]
 sprite_frames = SubResource("SpriteFrames_2hs0m")
-animation = &"take_damage"
+animation = &"hit"
 autoplay = "idle"
-frame_progress = 0.99216926
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1550058504]
 position = Vector2(0, 6)
@@ -160,3 +160,6 @@ shape = SubResource("CircleShape2D_4flbx")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1797757626]
 stream = ExtResource("3_qhqgy")
 bus = &"Effect"
+
+[node name="HitAudioPlayer" type="AudioStreamPlayer2D" parent="." unique_id=632145034]
+stream = ExtResource("4_dqkch")

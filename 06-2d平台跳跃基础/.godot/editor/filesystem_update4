@@ -1,8 +1,7 @@
-res://scenes/player.tscn
-res://scripts/player.gd
+res://scenes/damage_area.tscn
+res://art/sprites/damage_area.gd
+res://scenes/slime.tscn
 res://main.tscn
-res://scripts/coin_label.gd
-res://heart.tscn
 res://game_manager.gd
-res://scripts/h_box_container.gd
-res://scenes/heart.tscn
+res://scripts/invincibility_timer.gd
+res://scenes/player.tscn

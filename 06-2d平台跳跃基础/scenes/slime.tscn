@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://by3eal48lgcwn" path="res://scenes/slime.gd" id="1_n6pvg"]
 [ext_resource type="Texture2D" uid="uid://bl53gpvg5mh1y" path="res://art/sprites/slime_green.png" id="2_pjw23"]
-[ext_resource type="PackedScene" uid="uid://cke3xwmqhca8m" path="res://scenes/death_zoom.tscn" id="3_2npkn"]
+[ext_resource type="PackedScene" uid="uid://dd5l5oc612a2g" path="res://scenes/damage_area.tscn" id="3_n6pvg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fd6lc"]
 atlas = ExtResource("2_pjw23")
@@ -40,8 +40,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2xjuo"]
-size = Vector2(9, 13)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n6pvg"]
+size = Vector2(10, 10.5)
 
 [node name="Slime" type="Node2D" unique_id=1409346424]
 script = ExtResource("1_n6pvg")
@@ -52,11 +52,12 @@ animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.949904
 
-[node name="DeathZoom" parent="." unique_id=1062299 instance=ExtResource("3_2npkn")]
+[node name="DamageArea" parent="." unique_id=22480070 instance=ExtResource("3_n6pvg")]
+collision_mask = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZoom" unique_id=587858592]
-position = Vector2(0, 4.5)
-shape = SubResource("RectangleShape2D_2xjuo")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea" unique_id=2075929800]
+position = Vector2(0, 5.75)
+shape = SubResource("RectangleShape2D_n6pvg")
 
 [node name="RayCastRight" type="RayCast2D" parent="." unique_id=412883932]
 position = Vector2(0, 5)

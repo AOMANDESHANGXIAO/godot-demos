@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dd5l5oc612a2g"]
+
+[ext_resource type="Script" uid="uid://dfbgr617rs5bb" path="res://art/sprites/damage_area.gd" id="1_5frsa"]
+
+[node name="DamageArea" type="Area2D" unique_id=22480070]
+script = ExtResource("1_5frsa")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

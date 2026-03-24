@@ -1,7 +1,8 @@
 extends Area2D
 
 @export var damage = 1
-@onready var game_manager: Node = $"../../GameManager"
+@onready var game_manager: Node = %GameManager
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

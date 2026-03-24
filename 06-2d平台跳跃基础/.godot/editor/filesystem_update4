@@ -1,5 +1,2 @@
 res://main.tscn
-res://game_manager.gd
-res://scripts/player.gd
-res://scenes/player.tscn
-res://scripts/h_box_container.gd
+res://art/sprites/damage_area.gd

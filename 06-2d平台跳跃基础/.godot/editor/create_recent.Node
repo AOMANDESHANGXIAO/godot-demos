@@ -1,6 +1,7 @@
-Node
 AnimationPlayer
 Timer
+TileMapLayer
+Node
 Label
 AudioStreamPlayer2D
 AudioListener2D
@@ -11,4 +12,3 @@ Sprite2D
 CanvasLayer
 Control
 Camera2D
-RayCast2D

@@ -1,5 +1,6 @@
 extends Label
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-
-func _on_game_manager_player_die() -> void:
+func _on_player_player_die() -> void:
 	self.visible = true # Replace with function body.
+	animation_player.play("star")

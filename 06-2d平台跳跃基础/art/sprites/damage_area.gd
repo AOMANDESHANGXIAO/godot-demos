@@ -1,19 +1,9 @@
 extends Area2D
 
 @export var damage = 1
-@onready var game_manager: Node = %GameManager
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
+@onready var player: CharacterBody2D = $"../../../Player"
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
-		game_manager.take_damage(damage)
+		player.take_damage(damage)

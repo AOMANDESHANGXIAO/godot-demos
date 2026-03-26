@@ -1,6 +1,6 @@
 extends HBoxContainer
-@onready var game_manager: Node = %GameManager
 
+@onready var player: CharacterBody2D = $"../../Player"
 
 var heart_scene  = preload("res://scenes/heart.tscn")
 
@@ -22,7 +22,8 @@ func draw_health_heart(cnt: int):
 
 
 func _ready()->void:
-	draw_health_heart(game_manager.health)
+	draw_health_heart(player.health)
 
-func _on_game_manager_health_changed(new_health: int, change_amount: int, max_health: int) -> void:
+
+func _on_player_health_changed(new_health: int, _change_amount: int, _max_health: int) -> void:
 	draw_health_heart(new_health) # Replace with function body.

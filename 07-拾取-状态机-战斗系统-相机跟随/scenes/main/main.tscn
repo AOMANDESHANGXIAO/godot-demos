@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dbu2qkvm1aj70"]
+
+[ext_resource type="PackedScene" uid="uid://6kuto38mq8to" path="res://scenes/hero/hero.tscn" id="1_hyk8p"]
+[ext_resource type="Script" uid="uid://jn8lkt30qqfg" path="res://scenes/main/label.gd" id="2_iuonh"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iuonh"]
+
+[node name="Main" type="Node2D" unique_id=1225990319]
+
+[node name="Hero" parent="." unique_id=144614608 instance=ExtResource("1_hyk8p")]
+position = Vector2(347, 161)
+scale = Vector2(3, 3)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1803176549]
+position = Vector2(12, 155)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=894044075]
+position = Vector2(226, 382)
+shape = SubResource("WorldBoundaryShape2D_iuonh")
+
+[node name="Label" type="Label" parent="." unique_id=1003031685]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 50
+text = "label"
+script = ExtResource("2_iuonh")

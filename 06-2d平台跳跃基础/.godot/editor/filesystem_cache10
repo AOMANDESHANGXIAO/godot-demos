@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1774484652
+::res://::1774576615
 default_bus_layout.tres::AudioBusLayout::562880564629325194::1774231371::0::1::::<><><>0<>0<><>::
 game_manager.gd::GDScript::5976301088189194954::1774406909::0::1::::<>Node<><>0<>0<><>::
 icon.svg::CompressedTexture2D::7644725939911932294::1774231371::1774321236::1::::<><><>0<>0<>3725f89b7d0988de89386e5a9f59075a<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
@@ -19,7 +19,7 @@ hurt.wav::AudioStreamWAV::9136989958465260607::1774231371::1774255220::1::::<><>
 jump.wav::AudioStreamWAV::4555448410108296144::1774231371::1774255220::1::::<><><>0<>0<>17c81002ed5d2ad028f872eb564f3c28<>res://.godot/imported/jump.wav-275eb156568133db01b6d57867d2180e.sample::
 power_up.wav::AudioStreamWAV::5280086168748845488::1774231371::1774255220::1::::<><><>0<>0<>e4f1debe0862aef9606ac040b9817c36<>res://.godot/imported/power_up.wav-4ed58027c4de023d0c460bbe2d9c3fe4.sample::
 tap.wav::AudioStreamWAV::8577790250360397841::1774231371::1774255220::1::::<><><>0<>0<>33f6949c46be146478364178bbe96052<>res://.godot/imported/tap.wav-c4a3b69db85444fd2d9764b116a9cdd8.sample::
-::res://art/sprites/::1774407663
+::res://art/sprites/::1774511652
 coin.png::CompressedTexture2D::3447739040894185057::1774231371::1774255220::1::::<><><>0<>0<>f6b284daff3850236b48096a9eba0cb6<>res://.godot/imported/coin.png-ad6958ee4826d9151308dc0c94e642d0.ctex::
 damage_area.gd::GDScript::7512666977342669627::1774407059::0::1::::<>Area2D<><>0<>0<><>::
 ddj.png::CompressedTexture2D::7353653539110375926::1774231371::1774255220::1::::<><><>0<>0<>ef40040a7bf8807f5b5b14536f6e3747<>res://.godot/imported/ddj.png-6f252460f8db958a72d8d3a7a814c66e.ctex::
